@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_230527) do
+ActiveRecord::Schema.define(version: 2018_10_27_231501) do
 
   create_table "families", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_230527) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "water_gallons"
-    t.integer "gasoline_gallon"
+    t.integer "gasoline_gallons"
     t.integer "meals_quantity"
     t.integer "blanket_quantity"
   end
