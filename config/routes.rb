@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   ##############################################################
   # ACCOUNT CONTROLS
   ##############################################################
@@ -12,13 +10,13 @@ Rails.application.routes.draw do
   }
 
   # Profile page viewing a profile for user named :username
-  get '/users/:username'
+  get '/users/:username', to: 'users#show'
 
   # Generates a view which lets user view and change their settings
-  get '/users/:username/settings' 
+  get '/users/:username/settings', to: 'users#edit'
 
   # This request is sent by user after they change their settings; then redirect them to profile page
-  put '/users/:username/settings'
+  put '/users/:username/settings', to: 'users#update'
 
   ##############################################################
   # ACCOUNT-SPECIFIC-CONTROLS
@@ -26,17 +24,17 @@ Rails.application.routes.draw do
 
   # Controls for Familys
   # Show list of nearby shelters which match needs
-  get '/shelters'
+  get '/shelters', to: 'shelters#show'
 
   # Controls for shelters
   # Get list of suppliers which match needs
-  get '/suppliers'
+  get '/suppliers', to: 'suppliers#show'
   # Get list of nearby families to which we may need to be able to help or distribute to
-  get '/families'
+  get '/families', to: 'families#show'
 
   # Controls for suppliers
   # Get list of shelters in need
-  get '/shelters'
+  get '/shelters', to: 'shelters#show'
 
 
 
@@ -45,9 +43,9 @@ Rails.application.routes.draw do
   ##############################################################
 
   # About page
-  get '/about'
+  get '/about', to: 'about#show'
 
   # External Resources Page
-  get '/resources'
+  get '/resources', to: 'resources#show'
 
 end
