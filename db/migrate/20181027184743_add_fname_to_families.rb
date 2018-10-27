@@ -1,0 +1,5 @@
+class AddFnameToFamilies < ActiveRecord::Migration[5.2]
+  def change
+    add_column :families, :Fname, :string
+  end
+end
