@@ -1,4 +1,4 @@
-class AddgasolineGallonToSuppliers < ActiveRecord::Migration[5.2]
+class AddgallonsgasolineTosuppliers < ActiveRecord::Migration[5.2]
   def change
   	add_column :suppliers, :gasoline_gallon, :integer
   end
