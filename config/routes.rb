@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "/", to: 'home#show'
+
   ##############################################################
   # ACCOUNT CONTROLS
   ##############################################################
@@ -10,13 +12,13 @@ Rails.application.routes.draw do
   }
 
   # Profile page viewing a profile for user named :username
-  get '/users/:username', to: 'users#show'
+  get '/users/profile/:username', to: 'users#show'
 
   # Generates a view which lets user view and change their settings
-  get '/users/:username/settings', to: 'users#edit'
+  # get '/users/:username/settings', to: 'users#edit'
 
   # This request is sent by user after they change their settings; then redirect them to profile page
-  put '/users/:username/settings', to: 'users#update'
+  # put '/users/:username/settings', to: 'users#update'
 
   ##############################################################
   # ACCOUNT-SPECIFIC-CONTROLS
