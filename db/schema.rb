@@ -10,21 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_210733) do
+ActiveRecord::Schema.define(version: 2018_10_27_230527) do
+
+  create_table "families", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "num_pets"
+    t.string "num_family_members"
+  end
 
   create_table "shelters", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "Name"
-    t.integer "Capcity_total"
-    t.integer "Capacity_Available"
-    t.boolean "PetFriendly"
+    t.string "name"
+    t.integer "capacity_total"
+    t.integer "capacty_available"
+    t.boolean "pet_friendly"
   end
 
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "water_gallons"
+    t.integer "gasoline_gallon"
+    t.integer "meals_quantity"
+    t.integer "blanket_quantity"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +46,16 @@ ActiveRecord::Schema.define(version: 2018_10_27_210733) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "contact_first_name"
+    t.string "user_name"
+    t.string "contact_last_name"
+    t.string "primary_phone"
+    t.string "secondary_phone"
+    t.string "street_address"
+    t.string "city"
+    t.string "county"
+    t.string "state"
+    t.string "zip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
