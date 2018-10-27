@@ -1,3 +1,49 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+    * {
+        box-sizing: border-box;
+    }
+    body {
+      font-family: Impact;
+    }
+
+    header {
+      background-image: image_url("hurricane.png") ;
+      padding: 30px;
+      text-align: center;
+      color:white;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: #ccc;
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .topnav a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 16px 18px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .topnav a:hover{
+      background-color: #666;
+      color: white;
+    }
+
+    .topnav a:active {
+      background-color: #666;
+      color: white;
+    }
+  	footer {
+  		background-image: image_url("hurricane.png");
+  		padding: 10px;
+  		text-align: center;
+  		color: white;
+  	}
+ 
