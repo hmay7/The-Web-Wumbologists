@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_041340) do
+ActiveRecord::Schema.define(version: 2018_10_28_102931) do
 
   create_table "families", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2018_10_28_041340) do
     t.string "county"
     t.string "state"
     t.string "zip"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
