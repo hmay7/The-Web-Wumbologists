@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_10_28_000248) do
-=======
-ActiveRecord::Schema.define(version: 2018_10_27_231501) do
->>>>>>> b5f3097efc0d08fbf6e7c731c0b57944cc710bfd
+ActiveRecord::Schema.define(version: 2018_10_28_041340) do
 
   create_table "families", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -29,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_231501) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "capacity_total"
-    t.integer "capacty_available"
+    t.integer "capacity_available"
     t.boolean "pet_friendly"
     t.integer "user_id"
   end
@@ -38,8 +34,8 @@ ActiveRecord::Schema.define(version: 2018_10_27_231501) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "water_gallons"
     t.integer "gasoline_gallons"
+    t.integer "water_gallons"
     t.integer "meals_quantity"
     t.integer "blanket_quantity"
     t.integer "user_id"
