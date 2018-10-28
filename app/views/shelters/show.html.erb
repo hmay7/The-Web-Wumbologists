@@ -2,11 +2,12 @@
 <div class="grid-container">
 	<% @shelters.each do |shelt| %>
 		<div class="grid-item">
-			<h2><%= "#{shelt.user.contact_first_name} #{shelt.user.contact_last_name}, #{shelt.name} members"%></h2>
-			<p><%= "#{shelt.user.street_address}, #{shelt.user.city} #{shelt.user.state} #{shelt.user.zip}" %></p>
-			<p><%= "#{shelt.user.primary_phone}, #{shelt.user.secondary_phone}" %></p>
-			<p><%= "#{shelt.capacity_total}" %></p>
-			<p><%= "#{shelt.capacity_available}" %></p>
+			<h2><%= "#{shelt.name}"%></h2>
+			<p><b>Contact: </b><%= "#{shelt.user.contact_first_name} #{shelt.user.contact_last_name}"%></p>
+			<p><b>Address: </b><%= "#{shelt.user.street_address}, #{shelt.user.city} #{shelt.user.state} #{shelt.user.zip}" %></p>
+			<p><b>Phone Number(s): </b><%= "#{shelt.user.primary_phone}, #{shelt.user.secondary_phone}" %></p>
+			<p><b>Total Capacity: </b></p><p><%= "#{shelt.capacity_total}" %></p>
+			<p><b>Available Capacity: </b><%= "#{shelt.capacity_available}"%></p>
 		</div>
 	<% end %>
 </div>

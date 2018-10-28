@@ -2,20 +2,21 @@
 <div class="grid-container">
 	<% @suppliers.each do |supp| %>
 		<div class="grid-item">
-			<h2><%= "#{supp.user.contact_first_name} #{supp.user.contact_last_name}, #{supp.name} members"%></h2>
-			<p><%= "#{supp.user.street_address}, #{supp.user.city} #{supp.user.state} #{supp.user.zip}" %></p>
-			<p><%= "#{supp.user.primary_phone} , #{supp.user.secondary_phone}" %></p>
+			<h2><%= "#{supp.name}"%></h2>
+			<p><b>Contact: </b><%= "#{supp.user.contact_first_name} #{supp.user.contact_last_name}"%></p>
+			<p><b>Address: </b><%= "#{supp.user.street_address}, #{supp.user.city} #{supp.user.state} #{supp.user.zip}" %></p>
+			<p><b>Phone Number(s): </b><%= "#{supp.user.primary_phone} , #{supp.user.secondary_phone}" %></p>
 			<% if supp.gasoline_gallons && supp.gasoline_gallons > 0%>
-				<p><%= "#{supp.gasoline_gallons} gasoline" %></p>
+				<p><b>Gallons of Gasoline:</b><%= "#{supp.gasoline_gallons}" %></p>
 			<% end %>
 			<% if supp.water_gallons && supp.water_gallons > 0%>
-				<p><%= "#{supp.water_gallons} water" %></p>
+				<p><b>Gallons of Water:</b><%= "#{supp.water_gallons}" %></p>
 			<% end %>
 			<% if supp.meals_quantity && supp.meals_quantity > 0%>
-				<p><%= "#{supp.meals_quantity} meals" %></p>
+				<p><b>Number of Meals:</b><%= "#{supp.meals_quantity}" %></p>
 			<% end %>
 			<% if supp.blanket_quantity && supp.blanket_quantity > 0%>
-				<p><%= "#{supp.blanket_quantity} blanket" %></p>
+				<p><b>Number of Blankets:</b><%= "#{supp.blanket_quantity}" %></p>
 			<% end %>
 		</div>
 	<% end %>

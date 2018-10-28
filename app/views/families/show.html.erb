@@ -2,11 +2,12 @@
 <div class="grid-container">
 	<% @families.each do |fam| %>
 		<div class="grid-item">
-			<h2><%= "#{fam.user.contact_first_name} #{fam.user.contact_last_name}, #{fam.num_family_members} members"%></h2>
-			<p><%= "#{fam.user.street_address}, #{fam.user.city} #{fam.user.state} #{fam.user.zip}" %></p>
-			<p><%= "#{fam.user.primary_phone} , #{fam.user.secondary_phone}" %></p>
+			<h2><%= "#{fam.user.contact_first_name} #{fam.user.contact_last_name}"%></h2>
+			<p><b>Number of Family Members: </b><%= "#{fam.num_family_members}"%></p>
+			<p><b>Address: </b><%= "#{fam.user.street_address}, #{fam.user.city} #{fam.user.state} #{fam.user.zip}" %></p>
+			<p><b>Phone Number(s): </b><%= "#{fam.user.primary_phone} , #{fam.user.secondary_phone}" %></p>
 			<% if fam.num_pets && fam.num_pets > 0%>
-				<p><%= "#{fam.num_pets} pets" %></p>
+				<p><b>Number of Pets</b><%= "#{fam.num_pets}" %></p>
 			<% end %>
 		</div>
 	<% end %>

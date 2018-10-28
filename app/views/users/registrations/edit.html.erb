@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, placeholder: "email" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -31,40 +31,40 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
   <div class="field">
-    <label for="contact_first_name">Contact First Name:</label><br/>
-    <input type="text" name="contact_first_name" id="contact_first_name" />
+    <%= f.label :contact_first_name, placeholder: "contact_first_name" %><br />
+    <%= f.text_field :contact_first_name, autofocus: true, autocomplete: "contact_first_name" %>
   </div>
   <div class="field">
-    <label for="contact_last_name">Contact Last Name:</label><br/>
-    <input type="text" name="contact_last_name" id="contact_last_name" />
+    <%= f.label :contact_last_name, placeholder: "contact_last_name" %><br />
+    <%= f.text_field :contact_last_name, autofocus: true, autocomplete: "contact_last_name" %>
+  </div>
+ <div class="field">
+    <%= f.label :primary_phone, placeholder: "primary_phone" %><br />
+    <%= f.text_field :primary_phone, autofocus: true, autocomplete: "primary_phone" %>
+  </div>
+ <div class="field">
+    <%= f.label :secondary_phone, placeholder: "secondary_phone" %><br />
+    <%= f.text_field :secondary_phone, autofocus: true, autocomplete: "secondary_phone" %>
   </div>
   <div class="field">
-    <label for="primary_phone">Primary Phone Number:</label><br/>
-    <input type="text" name="primary_phone" id="primary_phone" />
+    <%= f.label :street_address, placeholder: "street_address" %><br />
+    <%= f.text_field :street_address, autofocus: true, autocomplete: "street_address" %>
   </div>
   <div class="field">
-    <label for="secondary_number">Secondary Phone Number:</label><br/>
-    <input type="text" name="secondary_number" id="secondary_number" />
+    <%= f.label :city, placeholder: "city" %><br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
   </div>
   <div class="field">
-    <label for="street_address">Street Address:</label><br/>
-    <input type="text" name="street_address" id="street_address" />
+    <%= f.label :county, placeholder: "county" %><br />
+    <%= f.text_field :county, autofocus: true, autocomplete: "county" %>
   </div>
   <div class="field">
-    <label for="city">City:</label><br/>
-    <input type="text" name="city" id="city" />
+    <%= f.label :state, placeholder: "state" %><br />
+    <%= f.text_field :state, autofocus: true, autocomplete: "state" %>
   </div>
   <div class="field">
-    <label for="county">County:</label><br/>
-    <input type="text" name="county" id="county" />
-  </div>
-  <div class="field">
-    <label for="state">State:</label><br/>
-    <input type="text" name="state" id="state" />
-  </div>
-  <div class="field">
-    <label for="zip">Zip:</label><br/>
-    <input type="text" name="zip" id="zip" />
+    <%= f.label :zip, placeholder: "zip" %><br />
+    <%= f.text_field :zip, autofocus: true, autocomplete: "zip" %>
   </div>
 
 
