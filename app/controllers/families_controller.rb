@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
   def show
-	end
+	@families = Family.all
   end
 end

@@ -1,2 +1,13 @@
-<h1>Families#show</h1>
-<p>Find me in app/views/families/show.html.erb</p>
+<h1>Families</h1>
+<div class="grid-container">
+	<% @families.each do |fam| %>
+		<div class="grid-item">
+			<h2><%= "#{fam.user.contact_first_name} #{fam.user.contact_last_name}, #{fam.num_family_members} members"%></h2>
+			<p><%= "#{fam.user.street_address}, #{fam.user.city} #{fam.user.state} #{fam.user.zip}" %></p>
+			<p><%= "#{fam.user.primary_phone} , #{fam.user.secondary_phone}" %></p>
+			<% if fam.num_pets && fam.num_pets > 0%>
+				<p><%= "#{fam.num_pets} pets" %></p>
+			<% end %>
+		</div>
+	<% end %>
+</div>
