@@ -5,7 +5,7 @@
         box-sizing: border-box;
     }
     body {
-      font-family: Impact;
+      font-family: Ariel;
     }
 
     header {
@@ -45,5 +45,15 @@
   		padding: 10px;
   		text-align: center;
   		color: white;
+  		position: absolute;
+  		right: 0;
+  		left: 0;
+  		bottom: 0;
+  		padding: lrem;
   	}
- 
+ 	
+ 	article {
+ 		text-align: center;
+ 		background-color: white;
+ 		padding: 15px;
+ 	}

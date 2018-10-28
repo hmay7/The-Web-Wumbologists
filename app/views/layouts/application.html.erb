@@ -9,22 +9,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
   </head>
+
+  <div class="topnav">
+    <a href="/about">Home</a>
+    <a href="/families">Families in Need</a>
+    <a href="/shelters">Shelters With Resources</a>
+    <a href="/suppliers">Suppliers</a>
+    <a href="/resources">Resources</a>
+    <a href="/users/profile/:username">My Profile</a>
+   </div>   
+
   <header>
     <h1> The Web Wumbologists </h1>
     <h3> Connecting Families and Resources During Disaster </h3>
   </header>
-
-  <div class="topnav">
-    <a href="/families">Families in Need</a>
-    <a href="/shelters">Shelters With Resources</a>
-    <a href="/suppliers">Suppliers</a>
-    <a href="FIXME">Profile</a>
-   </div>     
+  
    
    <%= yield %>
 
   <footer>
-    <h4> Creaed by The Web Wumbologists </h4>
+    <h4> Created by The Web Wumbologists </h4>
     <p> Hack Ohi/o 2018 </p>
   </footer>
 
