@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       User.transaction do 
         build_resource(sign_up_params)
 
+        resource.generate_lat_long!
         resource.save
         yield resource if block_given?
         if resource.persisted?
@@ -66,6 +67,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     super
+    current_user.generate_lat_long!
+    current_user.save!
 
     if user_is_family?
       fam = Family.find_by_user_id(current_user.id)
