@@ -14,7 +14,27 @@ class Users::RegistrationsController < Devise::RegistrationsController
     type = params[:user_type];
     if type != nil
       puts "TYPE = #{type}"
-      super
+      User.transaction do 
+        build_resource(sign_up_params)
+
+        resource.save
+        yield resource if block_given?
+        if resource.persisted?
+          if resource.active_for_authentication?
+              set_flash_message! :notice, :signed_up
+              sign_up(resource_name, resource)
+              respond_with resource, location: after_sign_up_path_for(resource)
+          else
+            set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+            expire_data_after_sign_in!
+            respond_with resource, location: after_inactive_sign_up_path_for(resource)
+          end
+        else
+          clean_up_passwords resource
+          set_minimum_password_length
+          respond_with resource
+        end
+      end
 
       custom_table = nil
       if type == "Family"
@@ -24,7 +44,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       elsif type == "Shelter"
         custom_table = Shelter.new
       end
-      custom_table.user_id = current_user.id
+      while (current_user == nil)
+        sleep(0.3)
+      end
+      custom_table.user_id = resource.id
       custom_table.save!
     end
   end
@@ -76,10 +99,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def sign_up_params
-    params.require(:user).permit(:email, :password, :encrypted_password, :user_name, :user_type)
+    params.require(:user).permit(:email, :password, :encrypted_password, :user_name, :contact_first_name, :contact_last_name, :primary_phone, :secondary_phone, :street_address, :city, :county, :state, :zip, :user_type)
   end
 
   def update_params
-    params.require(:user).permit(:email, :password, :encrypted_password, :user_name, :user_type)
+    params.require(:user).permit(:email, :password, :encrypted_password, :user_name, :contact_first_name, :contact_last_name, :primary_phone, :secondary_phone, :street_address, :city, :county, :state, :zip, :user_type)
   end
 end

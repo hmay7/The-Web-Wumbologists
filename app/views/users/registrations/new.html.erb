@@ -27,6 +27,51 @@
   </div>
 
   <div class="field">
+    <%= f.label :contact_first_name %><br />
+    <%= f.text_field :contact_first_name, autocomplete: "contact_first_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact_last_name %><br />
+    <%= f.text_field :contact_last_name, autocomplete: "contact_last_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :primary_phone %><br />
+    <%= f.text_field :primary_phone, autocomplete: "primary_phone" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :secondary_phone %><br />
+    <%= f.text_field :secondary_phone, autocomplete: "secondary_phone" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street_address %><br />
+    <%= f.text_field :street_address, autocomplete: "street_address" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autocomplete: "city" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :county %><br />
+    <%= f.text_field :county, autocomplete: "county" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autocomplete: "state" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip, autocomplete: "zip" %>
+  </div>
+
+  <div class="field">
     <label for="user_type_selection">Account Type</label><br/>
     <input list="user_types" name="user_type">
     <datalist id="user_types">
