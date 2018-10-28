@@ -2,3 +2,4 @@ test
 log
 tmp
 db/*sqlite.3
+db/*.sqlite3
