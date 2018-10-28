@@ -33,8 +33,44 @@
 
   <!-- SHELTER SETTINGS-->
   <% if @shelter != nil %>
+    <div class = "field">
+      <label for="shleter_name">Name:</label><br/>
+      <input type="text" name="name" id="shelter_name" />
+    </div>
+    <div class = "field">
+      <label for="capacity_total">Total Capacity:</label><br/>
+      <input type="text" name="capacity_total" id="shelter_capacity_total" />
+    </div>
+    <div class = "field">
+      <label for="shleter_capacity_available">Available Capacity:</label><br/>
+      <input type="text" name="capacity_available" id="shleter_capacity_available" />
+    </div>
+    <div class = "field">
+      <label for="shleter_pet_friendly">Pet Freindly (Yes or No):</label><br/>
+      <input type="text" name="pet_friendly" id="shleter_pet_friendly" />
+    </div>
 
   <% elsif @supplier != nil %>
+    <div class = "field">
+      <label for="supplier_name">Name:</label><br/>
+      <input type="text" name="name" id="supplier_name" />
+    </div>
+    <div class = "field">
+      <label for="supplier_gasoline_gallons">Gallons of Gasoline:</label><br/>
+      <input type="text" name="gasoline_gallons" id="supplier_gasoline_gallons" />
+    </div>
+    <div class = "field">
+      <label for="supplier_water_gallons">Gallons of Water:</label><br/>
+      <input type="text" name="water_gallons" id="supplier_water_gallons" />
+    </div>
+    <div class = "field">
+      <label for="supplier_meals_quantity">Meal Quantity:</label><br/>
+      <input type="text" name="meals_quantity" id="supplier_meals_quantity" />
+    </div>
+    <div class = "field">
+      <label for="supplier_blanket_quantity">Blanket Quantity:</label><br/>
+      <input type="text" name="blanket_quantity" id="supplier_blanket_quantity" />
+    </div>
 
 
   <% elsif @family != nil %>
