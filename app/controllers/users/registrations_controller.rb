@@ -74,7 +74,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     elsif user_is_shelter?
       shelt = Shelter.find_by_user_id(current_user.id)
-      shlet.name = params[:name] if params[:name] != nil
+      shelt.name = params[:name] if params[:name] != nil
       shelt.capacity_total = params[:capacity_total] if params[:capacity_total] != nil
       shelt.capacity_available = params[:capacity_available] if params[:capacity_available] != nil
       shelt.pet_friendly = params[:pet_friendly] if params[:pet_friendly] != nil
