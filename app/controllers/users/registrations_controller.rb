@@ -53,14 +53,32 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @user = current_user
+    @shelter = Shelter.find_by_user_id(@user.id)
+    @supplier = Supplier.find_by_user_id(@user.id)
+    @family = Family.find_by_user_id(@user.id)
+    super
+  
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+
+    if user_is_family?
+      fam = Family.find_by_user_id(current_user.id)
+      fam.num_pets = params[:num_pets] if params[:num_pets] != nil
+      fam.num_family_members = params[:num_family_members] if params[:num_family_members] != nil
+      fam.save!
+
+    elsif user_is_shelter?
+
+    elsif user_is_supplier?
+
+    end
+      
+  end
 
   # DELETE /resource
   # def destroy
