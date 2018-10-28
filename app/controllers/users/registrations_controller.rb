@@ -10,9 +10,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    type = params[:user_type];
+    if type != nil
+      puts "TYPE = #{type}"
+      super
+
+      custom_table = nil
+      if type == "Family"
+        custom_table = Family.new
+      elsif type == "Supplier"
+        custom_table = Supplier.new
+      elsif type == "Shelter"
+        custom_table = Shelter.new
+      end
+      custom_table.user_id = current_user.id
+      custom_table.save!
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -59,4 +74,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def sign_up_params
+    params.require(:user).permit(:email, :password, :encrypted_password, :user_name, :user_type)
+  end
+
+  def update_params
+    params.require(:user).permit(:email, :password, :encrypted_password, :user_name, :user_type)
+  end
 end

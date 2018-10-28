@@ -5,7 +5,7 @@
         box-sizing: border-box;
     }
     body {
-      font-family: Impact;
+      font-family: Ariel;
     }
 
     header {
@@ -13,7 +13,12 @@
       padding: 30px;
       text-align: center;
       color:white;
+      position: relative;
     }
+
+    /*header_push {
+    	clear: both; 
+    }*/
     .topnav {
       overflow: hidden;
       background-color: #ccc;
@@ -45,5 +50,25 @@
   		padding: 10px;
   		text-align: center;
   		color: white;
+  		position: absolute;
+  		right: 0;
+  		left: 0;
+  		bottom: 0;
+  		padding: lrem;
+
   	}
- 
+
+  	/*footer_push {
+  		clear: both;
+  		height: 50px;
+  	}*/
+ 	
+ 	article {
+ 		text-align: center;
+ 		background-color: white;
+ 		padding: 15px;
+ 		position: relative;
+ 		margin: 0;
+ 		padding: 0;
+ 		height: 100%;
+ 	}
