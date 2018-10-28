@@ -69,23 +69,57 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if user_is_family?
       fam = Family.find_by_user_id(current_user.id)
+      use = current_user
       fam.num_pets = params[:num_pets] if params[:num_pets] != nil
       fam.num_family_members = params[:num_family_members] if params[:num_family_members] != nil
+      use.contact_first_name = params[:contact_first_name] if params[:contact_first_name] != nil
+      use.contact_last_name = params[:contact_last_name] if params[:contact_last_name] != nil
+      use.primary_phone = params[:primary_phone] if params[:primary_phone] != nil
+      use.secondary_phone = params[:secondary_phone] if params[:secondary_phone] != nil
+      use.street_address = params[:street_address] if params[:street_address] != nil
+      use.city = params[:city] if params[:city] != nil
+      use.county = params[:county] if [:country] != nil
+      use.state = params[:state] if [:state] != nil
+      use.zip = params[:zip] if [:zip] != nil
       fam.save!
 
     elsif user_is_shelter?
       shelt = Shelter.find_by_user_id(current_user.id)
+      use = current_user
       shelt.name = params[:name] if params[:name] != nil
       shelt.capacity_total = params[:capacity_total] if params[:capacity_total] != nil
       shelt.capacity_available = params[:capacity_available] if params[:capacity_available] != nil
       shelt.pet_friendly = params[:pet_friendly] if params[:pet_friendly] != nil
+      use.contact_first_name = params[:contact_first_name] if params[:contact_first_name] != nil
+      use.contact_last_name = params[:contact_last_name] if params[:contact_last_name] != nil
+      use.primary_phone = params[:primary_phone] if params[:primary_phone] != nil
+      use.secondary_phone = params[:secondary_phone] if params[:secondary_phone] != nil
+      use.street_address = params[:street_address] if params[:street_address] != nil
+      use.city = params[:city] if params[:city] != nil
+      use.county = params[:county] if [:country] != nil
+      use.state = params[:state] if [:state] != nil
+      use.zip = params[:zip] if [:zip] != nil
+      shelt.save!
+
     elsif user_is_supplier?
       supp = Supplier.find_by_user_id(current_user.id)
+      use = current_user
       supp.name = params[:name] if params[:name] != nil
       supp.gasoline_gallons = params[:gasoline_gallons] if params[:gasoline_gallons] != nil
       supp.water_gallons = params[:water_gallons] if params[:water_gallons] != nil
       supp.meals_quantity = params[:meals_quantity] if params[:meals_quantity] != nil
       supp.blanket_quantity = params[:blanket_quantity] if params[:blanket_quantity] != nil
+      use.contact_first_name = params[:contact_first_name] if params[:contact_first_name] != nil
+      use.contact_last_name = params[:contact_last_name] if params[:contact_last_name] != nil
+      use.primary_phone = params[:primary_phone] if params[:primary_phone] != nil
+      use.secondary_phone = params[:secondary_phone] if params[:secondary_phone] != nil
+      use.street_address = params[:street_address] if params[:street_address] != nil
+      use.city = params[:city] if params[:city] != nil
+      use.county = params[:county] if [:country] != nil
+      use.state = params[:state] if [:state] != nil
+      use.zip = params[:zip] if [:zip] != nil
+      supp.save!
+
     end
       
   end

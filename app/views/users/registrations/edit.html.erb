@@ -31,40 +31,40 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
   <div class="field">
-    <%= f.label :ccontact_first_name%><br />
-    <%= f.password_field :contact_first_name, autocomplete: "contact-first-name" %>
-  </div>
-  <div class="field">34
-    <%= f.label :ccontact_last_name%><br />
-    <%= f.password_field :contact_last_name, autocomplete: "contact-last-name" %>
+    <label for="contact_first_name">Contact First Name:</label><br/>
+    <input type="text" name="contact_first_name" id="contact_first_name" />
   </div>
   <div class="field">
-    <%= f.label :primary_phone%><br />
-    <%= f.password_field :primary_phone, autocomplete: "primary-phone" %>
+    <label for="contact_last_name">Contact Last Name:</label><br/>
+    <input type="text" name="contact_last_name" id="contact_last_name" />
   </div>
   <div class="field">
-    <%= f.label :secondary_phone%><br />
-    <%= f.password_field :secondary_phone, autocomplete: "secondary-phone" %>
+    <label for="primary_phone">Primary Phone Number:</label><br/>
+    <input type="text" name="primary_phone" id="primary_phone" />
   </div>
   <div class="field">
-    <%= f.label :street_address%><br />
-    <%= f.password_field :street_address, autocomplete: "street-address" %>
+    <label for="secondary_number">Secondary Phone Number:</label><br/>
+    <input type="text" name="secondary_number" id="secondary_number" />
   </div>
   <div class="field">
-    <%= f.label :city%><br />
-    <%= f.password_field :city, autocomplete: "city" %>
+    <label for="street_address">Street Address:</label><br/>
+    <input type="text" name="street_address" id="street_address" />
   </div>
-   <div class="field">
-    <%= f.label :county%><br />
-    <%= f.password_field :county, autocomplete: "county" %>
+  <div class="field">
+    <label for="city">City:</label><br/>
+    <input type="text" name="city" id="city" />
   </div>
-   <div class="field">
-    <%= f.label :state%><br />
-    <%= f.password_field :state, autocomplete: "state" %>
+  <div class="field">
+    <label for="county">County:</label><br/>
+    <input type="text" name="county" id="county" />
   </div>
-   <div class="field">
-    <%= f.label :zip%><br />
-    <%= f.password_field :zip, autocomplete: "zip" %>
+  <div class="field">
+    <label for="state">State:</label><br/>
+    <input type="text" name="state" id="state" />
+  </div>
+  <div class="field">
+    <label for="zip">Zip:</label><br/>
+    <input type="text" name="zip" id="zip" />
   </div>
 
 
