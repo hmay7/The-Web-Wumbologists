@@ -13,7 +13,12 @@
       padding: 30px;
       text-align: center;
       color:white;
+      position: relative;
     }
+
+    /*header_push {
+    	clear: both; 
+    }*/
     .topnav {
       overflow: hidden;
       background-color: #ccc;
@@ -50,10 +55,20 @@
   		left: 0;
   		bottom: 0;
   		padding: lrem;
+
   	}
+
+  	/*footer_push {
+  		clear: both;
+  		height: 50px;
+  	}*/
  	
  	article {
  		text-align: center;
  		background-color: white;
  		padding: 15px;
+ 		position: relative;
+ 		margin: 0;
+ 		padding: 0;
+ 		height: 100%;
  	}
