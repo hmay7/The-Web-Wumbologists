@@ -3,3 +3,7 @@ log
 tmp
 db/*sqlite.3
 db/*.sqlite3
+.DS_store
+.DS_Store
+
+*.DS_Store
