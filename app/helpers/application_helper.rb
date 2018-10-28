@@ -16,6 +16,6 @@ module ApplicationHelper
     return user_signed_in? && Shelter.find_by_user_id(current_user.id) != nil
   end
 
-  
+  def 
 
 end
