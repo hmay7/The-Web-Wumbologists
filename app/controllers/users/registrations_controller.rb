@@ -20,6 +20,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
         resource.save
         yield resource if block_given?
         if resource.persisted?
+
+
+          custom_table = nil
+          if type == "Family"
+            custom_table = Family.new
+          elsif type == "Supplier"
+            custom_table = Supplier.new
+          elsif type == "Shelter"
+            custom_table = Shelter.new
+          end
+          custom_table.user_id = resource.id
+          custom_table.save!
+
+
           if resource.active_for_authentication?
               set_flash_message! :notice, :signed_up
               sign_up(resource_name, resource)
@@ -36,19 +50,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
       end
 
-      custom_table = nil
-      if type == "Family"
-        custom_table = Family.new
-      elsif type == "Supplier"
-        custom_table = Supplier.new
-      elsif type == "Shelter"
-        custom_table = Shelter.new
-      end
-      while (current_user == nil)
-        sleep(0.3)
-      end
-      custom_table.user_id = resource.id
-      custom_table.save!
     end
   end
 
