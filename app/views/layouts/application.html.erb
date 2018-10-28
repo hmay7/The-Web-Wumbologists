@@ -21,8 +21,12 @@
     <a href="/shelters">Shelters With Resources</a>
     <a href="/suppliers">Suppliers</a>
     <a href="/resources">Resources</a>
-    <a href="/users/profile/:username">My Profile</a>
-    <a href="/users/edit">Settings</a>
+    <% if user_signed_in? %>
+      <a href= <%="/users/profile/#{current_user.user_name}"%> >My Profile</a>
+      <a href="/users/edit">Settings</a>
+    <% else %>
+      <a href="/users/sign_in">Sign In</a>  
+    <% end %>
    </div>   
 
    <%= yield %>
