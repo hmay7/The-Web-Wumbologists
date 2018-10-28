@@ -30,6 +30,43 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
+  <div class="field">
+    <%= f.label :ccontact_first_name%><br />
+    <%= f.password_field :contact_first_name, autocomplete: "contact-first-name" %>
+  </div>
+  <div class="field">34
+    <%= f.label :ccontact_last_name%><br />
+    <%= f.password_field :contact_last_name, autocomplete: "contact-last-name" %>
+  </div>
+  <div class="field">
+    <%= f.label :primary_phone%><br />
+    <%= f.password_field :primary_phone, autocomplete: "primary-phone" %>
+  </div>
+  <div class="field">
+    <%= f.label :secondary_phone%><br />
+    <%= f.password_field :secondary_phone, autocomplete: "secondary-phone" %>
+  </div>
+  <div class="field">
+    <%= f.label :street_address%><br />
+    <%= f.password_field :street_address, autocomplete: "street-address" %>
+  </div>
+  <div class="field">
+    <%= f.label :city%><br />
+    <%= f.password_field :city, autocomplete: "city" %>
+  </div>
+   <div class="field">
+    <%= f.label :county%><br />
+    <%= f.password_field :county, autocomplete: "county" %>
+  </div>
+   <div class="field">
+    <%= f.label :state%><br />
+    <%= f.password_field :state, autocomplete: "state" %>
+  </div>
+   <div class="field">
+    <%= f.label :zip%><br />
+    <%= f.password_field :zip, autocomplete: "zip" %>
+  </div>
+
 
   <!-- SHELTER SETTINGS-->
   <% if @shelter != nil %>
