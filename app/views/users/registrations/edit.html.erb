@@ -31,9 +31,34 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <!-- SHELTER SETTINGS-->
+  <% if @shelter != nil %>
+
+  <% elsif @supplier != nil %>
+
+
+  <% elsif @family != nil %>
+    <div class = "field">
+      <label for="family_num_pets">Number of Pets:</label> <br/>
+      <input type="text" name="num_pets" id="family_num_pets" />
+    </div>
+    <div class = "field">
+      <label for="family_num_family_members">Number of Family Members:</label> <br/>
+      <input type="text" name="num_family_members" id="family_num_family_members" />
+    </div>
+
+  <% else %>
+    <p> No user type found! </p>
+
+  <% end %>
+
+
+
+
   <div class="actions">
-    <%= f.submit "Update" %>
+      <%= f.submit "Update" %>
   </div>
+
 <% end %>
 
 <h3>Cancel my account</h3>

@@ -9,8 +9,6 @@ class HomeController < ApplicationController
     	redirect_to "/users/sign_in"
     end
   	# otherwise, redirect to log in page
-
-
   end
 
 end
