@@ -1,3 +1,12 @@
-<h1>Shelters#show</h1>
-<p>Find me in app/views/shelters/show.html.erb</p>
-
+<h1>Shelters</h1>
+<div class="grid-container">
+	<% @shelters.each do |shelt| %>
+		<div class="grid-item">
+			<h2><%= "#{shelt.user.contact_first_name} #{shelt.user.contact_last_name}, #{shelt.name} members"%></h2>
+			<p><%= "#{shelt.user.street_address}, #{shelt.user.city} #{shelt.user.state} #{shelt.user.zip}" %></p>
+			<p><%= "#{shelt.user.primary_phone}, #{shelt.user.secondary_phone}" %></p>
+			<p><%= "#{shelt.capacity_total}" %></p>
+			<p><%= "#{shelt.capacity_available}" %></p>
+		</div>
+	<% end %>
+</div>
